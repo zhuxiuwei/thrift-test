@@ -5,12 +5,14 @@ import com.xiuwei.service.UserServiceImpl;
 import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.server.TServer;
 import org.apache.thrift.server.TSimpleServer;
+import org.apache.thrift.server.TThreadPoolServer;
 import org.apache.thrift.transport.TServerSocket;
 import org.apache.thrift.transport.TServerTransport;
 import org.apache.thrift.transport.TTransportException;
 
 /**
- * 单线程同步模型，仅适合测试，不适合生产环境使用。
+ * 1. 单线程同步模型，仅适合测试，不适合生产环境使用。
+ * 如果有多个客户端同时访问，后来的客户端会被阻塞。
  */
 public class SimpleServer {
     public static void main(String[] args) {
@@ -22,7 +24,7 @@ public class SimpleServer {
             //指定二进制协议。服务端和客户端要一致。
             TBinaryProtocol.Factory factory = new TBinaryProtocol.Factory();
             //以下写法固定
-            TServer.Args tArgs = new TServer.Args(transport);
+            TThreadPoolServer.Args tArgs = new TThreadPoolServer.Args(transport);
             tArgs.processor(processor);
             tArgs.protocolFactory(factory);
             //单线程服务模型，一般用于测试

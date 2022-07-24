@@ -10,9 +10,8 @@ import org.apache.thrift.transport.TTransport;
 import org.apache.thrift.transport.TTransportException;
 
 /**
- * 阻塞式客户端
- * 用二进制协议
- * 单线程同步模型，仅适合测试，不适合生产环境使用。
+ * 阻塞式客户端  用二进制协议
+ * 适用于SimpleServer、ThreadPoolServer
  */
 public class SimpleClient {
     public static void main(String[] args) {
@@ -26,19 +25,26 @@ public class SimpleClient {
             UserService.Client client = new UserService.Client(protocol);
             //建立连接
             transport.open();
-            /**
-             * 发起RPC调用
-             */
+            /** 发起RPC调用 */
             User user = client.getById(1);
             System.out.println(user);
             System.out.println("Tom existed? " + client.isExist("Tom"));
             System.out.println("Haha existed? " + client.isExist("Haha"));
+            /** 模拟阻塞式调用。
+             * 配合SimpleServer： 同时开2个client，后开的必须等先开的执行完，才能再连上server。
+             * 配合ThreadPoolServer： 同时开2个client，2个都能同时连上server。
+             * */
+            Thread.sleep(10000);
         } catch (TTransportException e) {
             throw new RuntimeException(e);
         } catch (TException e) {
             throw new RuntimeException(e);
-        }finally {
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        } finally {
+            System.out.println("client quit now.");
             transport.close();
         }
+
     }
 }
