@@ -5,8 +5,8 @@ import com.xiuwei.UserService;
 import org.apache.thrift.TException;
 
 /**
- * 简单服务端（同步）
  * 实现UserService.Iface接口，去实现业务逻辑。
+ * 适用于全部的server类型。
  */
 public class UserServiceImpl implements UserService.Iface{
 

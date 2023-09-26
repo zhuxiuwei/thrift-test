@@ -9,13 +9,24 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>annotation-version</artifactId>
+    <artifactId>MTThrift</artifactId>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.sankuai</groupId>
+                <artifactId>inf-bom</artifactId>
+                <version>1.5.1-RC2</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
-            <groupId>com.facebook.swift</groupId>
-            <artifactId>swift-annotations</artifactId>
-            <version>0.23.1</version>
+            <groupId>com.meituan.service.mobile</groupId>
+            <artifactId>mtthrift</artifactId>
         </dependency>
     </dependencies>
 

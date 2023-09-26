@@ -11,6 +11,8 @@
     <modules>
         <module>thrift-server</module>
         <module>thrift-client</module>
+        <module>annotation-version</module>
+        <module>MTThrift</module>
     </modules>
 
     <properties>
