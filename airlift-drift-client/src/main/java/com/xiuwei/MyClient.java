@@ -1,17 +1,16 @@
-package org.example.client;
+package com.xiuwei;
 
 import com.facebook.drift.client.DriftClient;
 import com.facebook.drift.client.DriftClientFactory;
 import com.facebook.drift.client.address.AddressSelector;
 import com.facebook.drift.client.address.SimpleAddressSelector;
-import com.facebook.drift.client.address.SimpleAddressSelectorConfig;
 import com.facebook.drift.codec.ThriftCodecManager;
 import com.facebook.drift.transport.netty.client.DriftNettyClientConfig;
 import com.facebook.drift.transport.netty.client.DriftNettyMethodInvokerFactory;
 import com.google.common.collect.ImmutableList;
 import com.google.common.net.HostAndPort;
-import org.example.bean.LogEntry;
-import org.example.service.Scribe;
+import com.xiuwei.bean.LogEntry;
+import com.xiuwei.service.Scribe;
 
 import java.util.List;
 
@@ -37,12 +36,12 @@ public class MyClient {
 
     public static void main(String[] args) {
         // create client factory (only create this expensive object once)
-        DriftClientFactory clientFactory = getClientFactory("127.0.0.1", 1234);
+        DriftClientFactory clientFactory = getClientFactory("127.0.0.1", 9090);
 
         // create a client (also only create this once)
-        DriftClient<Scribe> ss = clientFactory.createDriftClient(Scribe.class);
+        Scribe scribe = clientFactory.createDriftClient(Scribe.class).get();
 
         // use client
-        ss.get().log(ImmutableList.of(new LogEntry("category", "message")));
+        scribe.log(ImmutableList.of(new LogEntry("category", "message")));
     }
 }

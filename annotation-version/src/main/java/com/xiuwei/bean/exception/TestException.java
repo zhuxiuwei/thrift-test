@@ -5,7 +5,7 @@ import com.facebook.swift.codec.ThriftField;
 import com.facebook.swift.codec.ThriftStruct;
 
 @ThriftStruct
-public class TestException extends AbstractThriftException {
+public class TestException extends Exception {
     private String message;
 
     @ThriftConstructor

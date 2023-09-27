@@ -1,5 +1,6 @@
-package com.xiuwei;
+package com.xiuwei.server;
 
+import com.xiuwei.service.UserService;
 import com.xiuwei.service.UserServiceImpl;
 import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.server.TServer;

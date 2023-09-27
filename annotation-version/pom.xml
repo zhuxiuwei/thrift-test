@@ -14,7 +14,17 @@
     <dependencies>
         <dependency>
             <groupId>com.facebook.swift</groupId>
+            <artifactId>swift-service</artifactId>
+            <version>0.23.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.facebook.swift</groupId>
             <artifactId>swift-annotations</artifactId>
+            <version>0.23.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.facebook.swift</groupId>
+            <artifactId>swift-codec</artifactId>
             <version>0.23.1</version>
         </dependency>
     </dependencies>

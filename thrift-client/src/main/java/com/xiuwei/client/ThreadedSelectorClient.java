@@ -1,8 +1,7 @@
 package com.xiuwei.client;
 
-import com.xiuwei.User;
-import com.xiuwei.UserService;
-import org.apache.thrift.protocol.TBinaryProtocol;
+import com.xiuwei.bean.User;
+import com.xiuwei.service.UserService;
 import org.apache.thrift.protocol.TCompactProtocol;
 import org.apache.thrift.protocol.TProtocol;
 import org.apache.thrift.transport.TSocket;

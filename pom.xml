@@ -12,9 +12,9 @@
         <module>thrift-server</module>
         <module>thrift-client</module>
         <module>annotation-version</module>
-        <module>MTThrift</module>
+        <module>airlift-drift-client</module>
+        <module>airlift-drift-server</module>
     </modules>
-
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>

@@ -13,7 +13,7 @@
     <dependencies>
         <dependency>
             <groupId>com.xiuwei</groupId>
-            <artifactId>thrift-test</artifactId>
+            <artifactId>thrift-server</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

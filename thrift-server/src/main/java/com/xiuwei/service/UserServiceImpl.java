@@ -1,7 +1,6 @@
 package com.xiuwei.service;
 
-import com.xiuwei.User;
-import com.xiuwei.UserService;
+import com.xiuwei.bean.User;
 import org.apache.thrift.TException;
 
 /**

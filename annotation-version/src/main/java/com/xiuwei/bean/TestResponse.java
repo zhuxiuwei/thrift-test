@@ -1,4 +1,4 @@
-package com.xiuwei.sevice;
+package com.xiuwei.bean;
 
 import com.facebook.swift.codec.ThriftConstructor;
 import com.facebook.swift.codec.ThriftField;
