@@ -1,12 +1,11 @@
-package com.xiuwei.bean;
+package com.xiuwei.bean.exception;
+
 import com.facebook.swift.codec.ThriftConstructor;
 import com.facebook.swift.codec.ThriftField;
 import com.facebook.swift.codec.ThriftStruct;
-import com.facebook.swift.service.ThriftException;
 
 @ThriftStruct
-public class TestException extends Exception {
-
+public class TestException extends AbstractThriftException {
     private String message;
 
     @ThriftConstructor

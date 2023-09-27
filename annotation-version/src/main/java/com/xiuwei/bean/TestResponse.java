@@ -1,15 +1,11 @@
-package com.xiuwei.bean;
-
+package com.xiuwei.sevice;
 
 import com.facebook.swift.codec.ThriftConstructor;
 import com.facebook.swift.codec.ThriftField;
-import com.facebook.swift.codec.ThriftStruct;
 
 import java.util.Objects;
 
-@ThriftStruct
 public class TestResponse {
-
     private Integer userId;
     private String message;
     private Integer seqId;
@@ -21,7 +17,7 @@ public class TestResponse {
         this.seqId = seqId;
     }
 
-    @ThriftField(value = 1, requiredness = ThriftField.Requiredness.REQUIRED)
+    @ThriftField(value = 1,requiredness = ThriftField.Requiredness.REQUIRED)
     public Integer getUserId() {
         return userId;
     }
@@ -41,7 +37,7 @@ public class TestResponse {
         this.message = message;
     }
 
-    @ThriftField(value = 3, requiredness = ThriftField.Requiredness.OPTIONAL)
+    @ThriftField(value = 3,requiredness = ThriftField.Requiredness.OPTIONAL)
     public Integer getSeqId() {
         return seqId;
     }
@@ -73,5 +69,6 @@ public class TestResponse {
                 ", message='" + message + '\'' +
                 ", seqId=" + seqId +
                 '}';
+
     }
 }
