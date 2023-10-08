@@ -42,6 +42,6 @@ public class MyClient {
         Scribe scribe = clientFactory.createDriftClient(Scribe.class).get();
 
         // use client
-        scribe.log(ImmutableList.of(new LogEntry("category", "message")));
+        scribe.log(ImmutableList.of(new LogEntry("category", "now: " + System.currentTimeMillis())));
     }
 }

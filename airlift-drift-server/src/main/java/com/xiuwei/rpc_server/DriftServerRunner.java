@@ -7,12 +7,13 @@ import com.facebook.drift.server.stats.NullMethodInvocationStatsFactory;
 import com.facebook.drift.transport.netty.server.DriftNettyServerConfig;
 import com.facebook.drift.transport.netty.server.DriftNettyServerTransportFactory;
 import com.google.common.collect.ImmutableSet;
+import com.xiuwei.service.Scribe;
 import com.xiuwei.service.ScribeImpl;
 
 public class DriftServerRunner {
     public static void main(String[] args) {
         // 我们自定义的服务。 service handler (must be thread safe)
-        ScribeImpl service = new ScribeImpl();
+        Scribe service = new ScribeImpl();
 
         DriftNettyServerConfig config = new DriftNettyServerConfig();
         config.setPort(9090);

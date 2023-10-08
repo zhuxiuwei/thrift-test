@@ -6,10 +6,12 @@ import com.xiuwei.bean.LogEntry;
 
 import java.util.List;
 
-@ThriftService
+/**
+ * 服务的实现类，不需要加thrift相关注解。
+ */
 public class ScribeImpl implements Scribe
 {
-    @ThriftMethod
+    @Override
     public int log(List<LogEntry> messages)
     {
         messages.forEach(message -> System.out.println(message.getMessage()));
