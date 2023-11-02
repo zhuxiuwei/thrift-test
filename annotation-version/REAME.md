@@ -1,5 +1,5 @@
 基于注解版本的。
-thrift-server、thrift-client是IDL的。  
+thrift-server-idl、thrift-client-idl是IDL的。  
 
 [Thrift 注解开发规范](https://km.sankuai.com/page/28187066)  
 [Thrift(二)：Thrift注解](https://blog.csdn.net/mingyuli/article/details/118464964)  

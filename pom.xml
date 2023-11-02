@@ -12,8 +12,8 @@
         <module>thrift-server-idl</module>
         <module>thrift-client-idl</module>
         <module>annotation-version</module>
-        <module>airlift-drift-client</module>
-        <module>airlift-drift-server</module>
+        <module>douban-service-drift</module>
+        <module>book-service-drift</module>
     </modules>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

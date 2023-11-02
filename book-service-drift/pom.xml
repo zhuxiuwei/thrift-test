@@ -7,10 +7,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>airlift-drift-server</artifactId>
+    <artifactId>book-service-drift</artifactId>
     <packaging>jar</packaging>
 
-    <name>airlift-drift-server</name>
+    <name>book-service-drift</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -18,6 +18,7 @@
     </properties>
 
     <dependencies>
+        <!-- rpc -->
         <dependency>
             <groupId>com.facebook.drift</groupId>
             <artifactId>drift-api</artifactId>

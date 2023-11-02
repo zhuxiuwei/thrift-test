@@ -1,6 +1,5 @@
-package com.xiuwei;
+package com.xiuwei.douban.rpc;
 
-import com.facebook.drift.client.DriftClient;
 import com.facebook.drift.client.DriftClientFactory;
 import com.facebook.drift.client.address.AddressSelector;
 import com.facebook.drift.client.address.SimpleAddressSelector;
@@ -9,12 +8,17 @@ import com.facebook.drift.transport.netty.client.DriftNettyClientConfig;
 import com.facebook.drift.transport.netty.client.DriftNettyMethodInvokerFactory;
 import com.google.common.collect.ImmutableList;
 import com.google.common.net.HostAndPort;
-import com.xiuwei.bean.LogEntry;
-import com.xiuwei.service.Scribe;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+import com.xiuwei.service.BookRpcService;
 
 import java.util.List;
 
-public class MyClient {
+/**
+ * 生成RPC客户端代理
+ */
+@Component
+public class BookConfig {
 
     private static DriftClientFactory getClientFactory(String host, int port){
         // server address
@@ -34,14 +38,13 @@ public class MyClient {
         return clientFactory;
     }
 
-    public static void main(String[] args) {
+    @Bean
+    public BookRpcService bookRpcService() throws Exception {
         // create client factory (only create this expensive object once)
         DriftClientFactory clientFactory = getClientFactory("127.0.0.1", 9090);
-
         // create a client (also only create this once)
-        Scribe scribe = clientFactory.createDriftClient(Scribe.class).get();
-
+        BookRpcService bookRpcService = clientFactory.createDriftClient(BookRpcService.class).get();
         // use client
-        scribe.log(ImmutableList.of(new LogEntry("category", "now: " + System.currentTimeMillis())));
+        return bookRpcService;
     }
 }
