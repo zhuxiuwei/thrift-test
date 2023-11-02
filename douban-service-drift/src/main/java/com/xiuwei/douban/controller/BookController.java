@@ -1,12 +1,10 @@
 package com.xiuwei.douban.controller;
 
 import com.facebook.drift.TException;
-import com.xiuwei.bean.BookDTO;
+import com.xiuwei.dto.BookDTO;
 import com.xiuwei.service.BookRpcService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Objects;
 
 @RestController
 public class BookController {

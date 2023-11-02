@@ -1,7 +1,7 @@
 package com.xiuwei.service;
 
 import com.facebook.drift.TException;
-import com.xiuwei.bean.BookDTO;
+import com.xiuwei.dto.BookDTO;
 import com.xiuwei.core.model.BookBO;
 import com.xiuwei.core.service.BookService;
 

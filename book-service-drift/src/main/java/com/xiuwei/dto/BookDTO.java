@@ -1,4 +1,4 @@
-package com.xiuwei.bean;
+package com.xiuwei.dto;
 
 import com.facebook.drift.annotations.ThriftField;
 import com.facebook.drift.annotations.ThriftStruct;
