@@ -1,4 +1,5 @@
 thrift RPC 客户端。对应的服务端是book-service-drift。  
+主要RPC相关逻辑在com.xiuwei.douban.rpc.BookConfig，它生成了book RPC服务的客户端代理(bookRpcService)，并注册到了Spring容器中，供controller使用。  
 同时，本服务提供了一个Http接口，供外部用户调用。本服务再调用Book服务获取数据。  
 链路： 浏览器—http-->douban-service --rpc--> book-service
 
