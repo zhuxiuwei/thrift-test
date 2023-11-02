@@ -1,10 +1,10 @@
 thrift RPC 客户端。对应的服务端是book-service-drift。  
-同时，本服务提供了一个Http接口，共外部用户调用。本服务再调用Book服务获取数据。  
+同时，本服务提供了一个Http接口，供外部用户调用。本服务再调用Book服务获取数据。  
 链路： 浏览器—http-->douban-service --rpc--> book-service
 
 启动方法：  
-1、在book-service-drift项目，运行DriftServerRunner，来启动服务。  
-2、在本项目，运行DoubanApplication，启动SpringBoot程序。  
+1、在book-service-drift项目，运行DriftServerRunner，来启动RPC服务。  
+2、在本项目，运行DoubanApplication，启动SpringBoot程序，程序暴露了一个HTTP接口。  
 
 效果：  
 在浏览器访问：http://localhost:8080/api/book/1  
